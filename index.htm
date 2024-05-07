@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Unsubscribe to Our HealthAdvocate</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* <style > html, */
+      body {
+        height: 100%;
+      }
+
+      .form-signin {
+        max-width: 330px;
+        padding: 1rem;
+      }
+      .important {
+        color: red;
+        font-size: 21px;
+        vertical-align: middle;
+        font-weight: bold;
+      }
+      .cancel {
+        background: #eaedf1;
+        width: 100%;
+        /* cursor: not-allowed !important; */
+        color: #666666;
+        border: none;
+        border-radius: 3px;
+        padding: 8px;
+      }
+      .confirm {
+        background: #282c33;
+        width: 100%;
+        /* cursor: not-allowed !important; */
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 8px;
+      }
+      .confirm:hover {
+        outline-color: transparent;
+        color: #282c33;
+        box-shadow: inset 0 0 0 1px #6f7681;
+        border-color: #6f7681;
+        background-color: #dfe3e8;
+      }
+      .border-0 {
+        padding: 2.125rem;
+      }
+      .textarea:focus {
+        outline: none;
+      }
+      .emailId:focus {
+        outline: none;
+      }
+      .card-title {
+        font-size: 40px;
+      }
+      .para {
+        color: #282c33;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.35;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      .message {
+        font-size: 50px !important;
+      }
+      .confirm[aria-disabled="true"] {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .s3img {
+        max-width: 90px;
+      }
+      .error-msg {
+        font-size: 12px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body class="d-flex align-items-center py-4 bg-body-tertiary">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="reason col-md-6" id="reason">
+          <div class="card border-0">
+            <div class="card-body border-0">
+              <!-- Unscubscribe icon -->
+              <div class="icon text-center mb-3">
+                <img
+                  class="s3img"
+                  src="https://cmui-dev.sensiple.com/unsub-settings.png"
+                  alt=""
+                />
+              </div>
+              <!-- Unscubscribe icon -->
+              <!-- Content -->
+              <div>
+                <h5 class="card-title text-center mb-4">
+                  <strong>Are you sure?</strong>
+                </h5>
+                <p class="para text-center">
+                  Submitting this form will unsubscribe you from HealthAdvocate
+                  emails.
+                </p>
+                <!-- <br /> -->
+              </div>
+              <!-- Content -->
+              <!-- Input Fields -->
+              <div>
+                <label for="text" class="text-end"
+                  >Email <span class="important">*</span></label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter Email"
+                  class="mb-3 w-100 p-2 emailId"
+                  disabled="true"
+                />
+                <p id="result" class="text-danger error-msg"></p>
+              </div>
+              <div>
+                <label for="text" class="text-end"
+                  >Comments
+                  <!-- <span class="important">*</span> -->
+                </label>
+                <textarea
+                  name="reason"
+                  id="textarea"
+                  class="w-100 textarea"
+                  cols="50"
+                  rows="4"
+                ></textarea>
+              </div>
+              <!-- Input Fields -->
+            </div>
+            <div class="err-msg">
+              <p
+                id="errmsg"
+                class="text-center font-weight-bold text-danger"
+              ></p>
+            </div>
+            <!-- Button -->
+            <div>
+              <div class="row">
+                <div class="col-md-12">
+                  <button
+                    type="submit"
+                    class="confirm"
+                    id="submitButton"
+                    onclick="submit()"
+                  >
+                    Unsubscribe
+                  </button>
+                </div>
+              </div>
+              <!-- Button -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6" id="unsubscribe" style="display: none">
+          <div class="card border-0 mt-5">
+            <div class="card-body border-0 text-center">
+              <div class="icon text-center mb-4">
+                <img
+                  class="s3img"
+                  src="https://cmui-dev.sensiple.com/unsub-check.png"
+                  alt="check"
+                />
+              </div>
+              <div class="mb-3">
+                <strong>Success.</strong>
+              </div>
+              <div class="mb-3">
+                <p class="card-text">You're Unsubscribed!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const unsubscribeApiUrl =
+        "https://cieyoljdc6.execute-api.us-east-1.amazonaws.com/qa/api/subscription/unsubscribe";
+      const getEmailId =
+        "https://cieyoljdc6.execute-api.us-east-1.amazonaws.com/qa/api/subscription/endpointId";
+      const email = document.getElementById("email");
+      const urlParams = new URLSearchParams(window.location.search);
+      const userId = urlParams.get("id");
+      const decodedId = userId?.replace(" ", "+");
+      const applicationId = urlParams.get("applicationId");
+      const campaignRunId = urlParams.get("campaignRunId");
+      const emailIdPayload = {
+        endpointId: decodedId,
+        applicationId: applicationId,
+      };
+
+      fetch(getEmailId, {
+        method: "POST",
+        body: JSON.stringify(emailIdPayload),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((res) => {
+          if (res.statusCode === 200) {
+            email.value = res.address;
+          } else {
+            email.disabled = false;
+          }
+        })
+        .catch((err) => {
+          console.log("error Fetching Entries:", err);
+        });
+      const validRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
+      email.addEventListener("keyup", () => {
+        if (email.value.match(validRegex)) {
+          document.getElementById("result").innerHTML = "";
+          document.getElementById("submitButton").ariaDisabled = false;
+        } else {
+          document.getElementById("result").innerHTML = "Invalid Email Address";
+          document.getElementById("submitButton").ariaDisabled = true;
+        }
+      });
+
+      function submit() {
+        const comment = document.getElementById("textarea").value;
+        const btn = document.getElementById("submitButton");
+        btn.innerText = ". . .";
+        const payload = {
+          emailId: email.value,
+          comments: comment,
+          endpointId: decodedId,
+          applicationId: applicationId,
+          campaignRunId: campaignRunId,
+        };
+
+        fetch(unsubscribeApiUrl, {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
+          .then((response) => response.json())
+          .then((res) => {
+            if (res.message === "Successfully unsubscribed!!") {
+              document.getElementById("reason").style.display = "none";
+              document.getElementById("unsubscribe").style.display = "block";
+            } else {
+              document.getElementById("errmsg").innerText = res.message;
+              btn.innerText = "Unsubscribe";
+            }
+          })
+          .catch((err) => {
+            console.log("error Fetching Entries:", err);
+          });
+      }
+    </script>
+  </body>
+</html>
